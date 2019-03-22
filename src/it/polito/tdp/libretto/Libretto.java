@@ -26,6 +26,26 @@ public class Libretto {
 		voti.add(v);
 	}
 	
+	/**
+	 * Seleziona il sottoinsieme di voti che hanno il punteggio specificato
+	 * 
+	 * @param punti punteggio da ricecare 
+	 * @return lista di {@link Voto} aventi quel punteggio (la lista può anche essere vuota)
+	 */
+	public List<Voto> cercaVoti(int punti){
+		List<Voto> result = new ArrayList<Voto>();
+		
+		for(Voto v : this.voti) {
+			if(v.getPunti() == punti) {
+			//Aggiungo alla nuova lista un oggetto già esistente, non ne faccio una copia, ma ne prendo il riferimento!	
+				result.add(v);
+			}
+		}
+		
+		return result;
+	}
+	
+	
 	
 
 }
