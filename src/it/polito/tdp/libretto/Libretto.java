@@ -45,7 +45,26 @@ public class Libretto {
 		return result;
 	}
 	
+	/**
+	 * Ricerca un {@link Voto} relativo al corso di cui è specificato il nome
+	 * 
+	 * @param nomeEsame nome del corso da ricercare
+	 * @return il {@link Voto} corrispondente, oppure {@code null}
+	 */
 	
 	
+	public Voto cercaEsame(String nomeEsame) {
+		for(Voto v : this.voti) {
+	/*RICORDA: == confronta le posizioni in memoria, per confrontare le stringhe si usa equals()
+	 *          posso usare == per confrontare variabili semplici (NON GLI OGGETTI) quindi con gli interi, char o null
+	 *compareTo() confronta due oggetti e dice quale viene prima e quale dopo, ci sono oggetti in cuui non ha senso mettere un ordine*/
+			
+			if(v.getCorso().equals(nomeEsame)) {
+				return v;
+			}
+		}
+		return null;
+	}
+
 
 }
